@@ -1,0 +1,2331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39D2267A-C216-4F31-9F6B-919EC8C6902F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>aorc.gatepass</RootNamespace>
+    <AssemblyName>aorc.gatepass</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.4.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\Barid az gp2 ghabl az 2012\all debug client\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.4.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\Barid az gp2 ghabl az 2012\all debug client\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.4.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\Barid az gp2 ghabl az 2012\all debug client\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.4.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\Barid az gp2 ghabl az 2012\all debug client\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.4.1, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\Barid az gp2 ghabl az 2012\all debug client\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="apaco.webcam.lib">
+      <HintPath>..\..\..\..\GP\apaco.webcam.lib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.SHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\GP\All\AxInterop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="Baridsoft.Controls, Version=3.6.6.4731, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\Barid az gp2 ghabl az 2012\Baridsoft.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Baridsoft.EOrg.Directory.BusinessObject, Version=3.6.6.4731, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\Barid az gp2 ghabl az 2012\Baridsoft.EOrg.Directory.BusinessObject.dll</HintPath>
+    </Reference>
+    <Reference Include="Baridsoft.EOrg.Framework.BusinessObject, Version=3.6.6.4731, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\Barid az gp2 ghabl az 2012\Baridsoft.EOrg.Framework.BusinessObject.dll</HintPath>
+    </Reference>
+    <Reference Include="Baridsoft.EOrg.Framework.General, Version=3.6.6.4731, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\Barid az gp2 ghabl az 2012\Baridsoft.EOrg.Framework.General.dll</HintPath>
+    </Reference>
+    <Reference Include="Baridsoft.EOrg.Framework.PluginInterface, Version=3.6.6.4731, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\Barid az gp2 ghabl az 2012\Baridsoft.EOrg.Framework.PluginInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Baridsoft.EOrg.Security.BusinessObject, Version=3.6.6.4731, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\Barid az gp2 ghabl az 2012\Baridsoft.EOrg.Security.BusinessObject.dll</HintPath>
+    </Reference>
+    <Reference Include="Baridsoft.EOrg.Workflow.BusinessObject, Version=3.6.6.4731, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\Barid az gp2 ghabl az 2012\Baridsoft.EOrg.Workflow.BusinessObject.dll</HintPath>
+    </Reference>
+    <Reference Include="Baridsoft.Utility, Version=3.6.6.4731, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\Barid az gp2 ghabl az 2012\Baridsoft.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\..\..\..\GP\All\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="FarsiLibrary.Resources">
+      <HintPath>..\..\..\..\GP\All\FarsiLibrary.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="FarsiLibrary.Utils">
+      <HintPath>..\..\..\..\GP\All\FarsiLibrary.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="FarsiLibrary.Win, Version=1.6.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\GP\All\FarsiLibrary.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Data.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\All\Janus.Data.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.ButtonBar.v3">
+      <HintPath>..\..\..\..\GP\All\Janus.Windows.ButtonBar.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.CalendarCombo.v3">
+      <HintPath>..\..\..\..\GP\All\Janus.Windows.CalendarCombo.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GP\All\Janus.Windows.Common.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.ExplorerBar.v3">
+      <HintPath>..\..\..\..\GP\All\Janus.Windows.ExplorerBar.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.FilterEditor.v3">
+      <HintPath>..\..\..\..\GP\All\Janus.Windows.FilterEditor.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.GridEX.v3">
+      <HintPath>..\..\..\..\GP\All\Janus.Windows.GridEX.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.Ribbon.v3">
+      <HintPath>..\..\..\..\GP\All\Janus.Windows.Ribbon.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.Schedule.v3">
+      <HintPath>..\..\..\..\GP\All\Janus.Windows.Schedule.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.TimeLine.v3">
+      <HintPath>..\..\..\..\GP\All\Janus.Windows.TimeLine.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.UI.v3">
+      <HintPath>..\..\..\..\GP\All\Janus.Windows.UI.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Ink, Version=1.7.2600.2180, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\GP\All\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Reporting, Version=6.0.12.215, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+    <Reference Include="Telerik.Reporting.Design, Version=6.0.12.215, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+    <Reference Include="Telerik.ReportViewer.WinForms, Version=6.0.12.215, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadDock, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Desert, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010Silver, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroBlue, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2012.1.12.215, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Complex Reports\Reporter\ManageExcel.cs" />
+    <Compile Include="Complex Reports\Reporter\V2_MainReporter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\Reporter\V2_MainReporter.designer.cs">
+      <DependentUpon>V2_MainReporter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\Reporter\MainReporter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\Reporter\MainReporter.designer.cs">
+      <DependentUpon>MainReporter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\Reporter\UC_TreeReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\Reporter\UC_TreeReport.Designer.cs">
+      <DependentUpon>UC_TreeReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportGH\frm_SelectOneAgree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportGH\frm_SelectOneAgree.designer.cs">
+      <DependentUpon>frm_SelectOneAgree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportGH\UC_ReportSearchAgree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportGH\UC_ReportSearchAgree.Designer.cs">
+      <DependentUpon>UC_ReportSearchAgree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportGP\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportGP\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportGP\frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportGP\frm.Designer.cs">
+      <DependentUpon>frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportInOut\UC_InOutView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportInOut\UC_InOutView.Designer.cs">
+      <DependentUpon>UC_InOutView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportInOut\UC_PageGp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportInOut\UC_PageGp.Designer.cs">
+      <DependentUpon>UC_PageGp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportInOut\UC_ReportSearchInOut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportInOut\UC_ReportSearchInOut.Designer.cs">
+      <DependentUpon>UC_ReportSearchInOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportOffice\frm_SelectOneOffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportOffice\frm_SelectOneOffice.designer.cs">
+      <DependentUpon>frm_SelectOneOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportOffice\UC_ReportSearchOffice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportOffice\UC_ReportSearchOffice.Designer.cs">
+      <DependentUpon>UC_ReportSearchOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportOper\frm_SelectOneOper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportOper\frm_SelectOneOper.designer.cs">
+      <DependentUpon>frm_SelectOneOper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportPassingEsmaeil\UC_PageGp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportPassingEsmaeil\UC_PageGp.Designer.cs">
+      <DependentUpon>UC_PageGp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportPassingEsmaeil\UC_ReportSearchInOut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportPassingEsmaeil\UC_ReportSearchInOut.Designer.cs">
+      <DependentUpon>UC_ReportSearchInOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportPerson\frm_SelectOnePersons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportPerson\frm_SelectOnePersons.designer.cs">
+      <DependentUpon>frm_SelectOnePersons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportGP\UC_ReportSearchGP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportGP\UC_ReportSearchGP.Designer.cs">
+      <DependentUpon>UC_ReportSearchGP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportVeh\frm_SelectOneVehicleR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportVeh\frm_SelectOneVehicleR.designer.cs">
+      <DependentUpon>frm_SelectOneVehicleR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportVeh\UC_ReportSearchVehicle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportVeh\UC_ReportSearchVehicle.Designer.cs">
+      <DependentUpon>UC_ReportSearchVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportVeh\UC_vehicleDetailsSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportVeh\UC_vehicleDetailsSearch.Designer.cs">
+      <DependentUpon>UC_vehicleDetailsSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\ReportWorkPlace\frm_SelectOneWorkPlace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportWorkPlace\frm_SelectOneWorkPlace.designer.cs">
+      <DependentUpon>frm_SelectOneWorkPlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\Uc Mini\clsReportCase.cs" />
+    <Compile Include="Complex Reports\ReportPerson\UC_ReportSearchPerson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\ReportPerson\UC_ReportSearchPerson.Designer.cs">
+      <DependentUpon>UC_ReportSearchPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\Uc Mini\UC_SelAgree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\Uc Mini\UC_SelAgree.Designer.cs">
+      <DependentUpon>UC_SelAgree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Complex Reports\Uc Mini\UC_SelCase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Complex Reports\Uc Mini\UC_SelCase.Designer.cs">
+      <DependentUpon>UC_SelCase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertNumbers.cs" />
+    <Compile Include="ComboCities.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComboCities.Designer.cs">
+      <DependentUpon>ComboCities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboCountry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComboCountry.Designer.cs">
+      <DependentUpon>ComboCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="b01_UC_packDetailsForNewGates.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="b01_UC_packDetailsForNewGates.Designer.cs">
+      <DependentUpon>b01_UC_packDetailsForNewGates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EsiGate3\EsiGateBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EsiGate3\EsiGateBase.designer.cs">
+      <DependentUpon>EsiGateBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EsiGate3\lightsMainMode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EsiGate3\lightsMainMode.Designer.cs">
+      <DependentUpon>lightsMainMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EsiGate3\lightsEsmaeil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EsiGate3\lightsEsmaeil.Designer.cs">
+      <DependentUpon>lightsEsmaeil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EsiGate3\MorMonitoring.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EsiGate3\MorMonitoring.Designer.cs">
+      <DependentUpon>MorMonitoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EsiGate3\mortezazadehUcGate3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EsiGate3\mortezazadehUcGate3.Designer.cs">
+      <DependentUpon>mortezazadehUcGate3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EsiGate3\mortezazadehUcGate2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EsiGate3\mortezazadehUcGate2.Designer.cs">
+      <DependentUpon>mortezazadehUcGate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EsiGate3\mortezazadehUcGate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EsiGate3\mortezazadehUcGate.Designer.cs">
+      <DependentUpon>mortezazadehUcGate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EsiGate3\UCmonitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EsiGate3\UCmonitor.Designer.cs">
+      <DependentUpon>UCmonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_EsiInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_EsiInputBox.designer.cs">
+      <DependentUpon>frm_EsiInputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\BackUp01frm_SelectConfirmerGp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\BackUp01frm_SelectConfirmerGp2.designer.cs">
+      <DependentUpon>BackUp01frm_SelectConfirmerGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\BackUp01_ V3UC_PackDetailsGp2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\BackUp01_ V3UC_PackDetailsGp2.Designer.cs">
+      <DependentUpon>BackUp01_ V3UC_PackDetailsGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_InPacksMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_InPacksMode.Designer.cs">
+      <DependentUpon>frm_InPacksMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\UC_SearchGpOnline.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\UC_SearchGpOnline.Designer.cs">
+      <DependentUpon>UC_SearchGpOnline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\v1-2GPPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\v1-2GPPrint.Designer.cs">
+      <DependentUpon>v1-2GPPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\v1_11GPPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\v1_11GPPrint.Designer.cs">
+      <DependentUpon>v1_11GPPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\v1_ReportViewerGP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\v1_ReportViewerGP.Designer.cs">
+      <DependentUpon>v1_ReportViewerGP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\v1_10PPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\v1_10PPrint.Designer.cs">
+      <DependentUpon>v1_10PPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\v1_09GPPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\v1_09GPPrint.Designer.cs">
+      <DependentUpon>v1_09GPPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\v1_08GPPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\v1_08GPPrint.Designer.cs">
+      <DependentUpon>v1_08GPPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tag\Class1.cs" />
+    <Compile Include="Tag\HID.cs" />
+    <Compile Include="Tag\MortezazadehReaders.cs" />
+    <Compile Include="Tag\RFT230.cs" />
+    <Compile Include="Tag\tag001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tag\tag001.Designer.cs">
+      <DependentUpon>tag001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tag\TagForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tag\TagForm.designer.cs">
+      <DependentUpon>TagForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tag\UC_TagSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tag\UC_TagSearch.Designer.cs">
+      <DependentUpon>UC_TagSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_OperatorDetailGp2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_OperatorDetailGp2.Designer.cs">
+      <DependentUpon>UC_OperatorDetailGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\V3UC_PackDetailsGp2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\V3UC_PackDetailsGp2.Designer.cs">
+      <DependentUpon>V3UC_PackDetailsGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_MotherGp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_MotherGp2.Designer.cs">
+      <DependentUpon>frm_MotherGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\V2UC_PackDetailsGp2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\V2UC_PackDetailsGp2.Designer.cs">
+      <DependentUpon>V2UC_PackDetailsGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\V2UC_NewPackDetailsGp2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\V2UC_NewPackDetailsGp2.Designer.cs">
+      <DependentUpon>V2UC_NewPackDetailsGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_3SearchGp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_3SearchGp2.designer.cs">
+      <DependentUpon>frm_3SearchGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_InpackGP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_InpackGP.Designer.cs">
+      <DependentUpon>frm_InpackGP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_packsGp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_packsGp2.Designer.cs">
+      <DependentUpon>frm_packsGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_PersonTempAddingGp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_PersonTempAddingGp2.designer.cs">
+      <DependentUpon>frm_PersonTempAddingGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_SecureUpdateGp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_SecureUpdateGp2.designer.cs">
+      <DependentUpon>frm_SecureUpdateGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_SelectConfirmerGp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_SelectConfirmerGp2.designer.cs">
+      <DependentUpon>frm_SelectConfirmerGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_SelectOrAddPersonsGp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_SelectOrAddPersonsGp2.designer.cs">
+      <DependentUpon>frm_SelectOrAddPersonsGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_SettingPackGatePlaceGp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\frm_SettingPackGatePlaceGp2.designer.cs">
+      <DependentUpon>frm_SettingPackGatePlaceGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\UC_packDetailsGatePlaceGp2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\UC_packDetailsGatePlaceGp2.Designer.cs">
+      <DependentUpon>UC_packDetailsGatePlaceGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\Pack\UC_packDetailsNewGatePlaceGp2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gp2\Pack\UC_packDetailsNewGatePlaceGp2.Designer.cs">
+      <DependentUpon>UC_packDetailsNewGatePlaceGp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\b03_GPPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\b03_GPPrint.Designer.cs">
+      <DependentUpon>b03_GPPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\b04_GPPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\b04_GPPrint.Designer.cs">
+      <DependentUpon>b04_GPPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\v1_07GPPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\v1_07GPPrint.Designer.cs">
+      <DependentUpon>v1_07GPPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\v1_06GPPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\v1_06GPPrint.Designer.cs">
+      <DependentUpon>v1_06GPPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\v1_05GPPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\v1_05GPPrint.Designer.cs">
+      <DependentUpon>v1_05GPPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\v1_04GPPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\v1_04GPPrint.Designer.cs">
+      <DependentUpon>v1_04GPPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\about\frm_about.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\about\frm_about.designer.cs">
+      <DependentUpon>frm_about.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\login\MyLogin.cs" />
+    <Compile Include="ui\mail\MailBarid.cs" />
+    <Compile Include="ui\operators\frm_SelectGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\operators\frm_SelectGroups.designer.cs">
+      <DependentUpon>frm_SelectGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectConfirmer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectConfirmer.designer.cs">
+      <DependentUpon>frm_SelectConfirmer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\v01_UC_packDetailsGatePlace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\package\v01_UC_packDetailsGatePlace.Designer.cs">
+      <DependentUpon>v01_UC_packDetailsGatePlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\v01_UC_packDetailsNewGatePlace001.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\package\v01_UC_packDetailsNewGatePlace001.Designer.cs">
+      <DependentUpon>v01_UC_packDetailsNewGatePlace001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="v01_UC_packDetailsGatePlace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="v01_UC_packDetailsGatePlace.Designer.cs">
+      <DependentUpon>v01_UC_packDetailsGatePlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="v01_UC_packDetailsNewGatePlace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="v01_UC_packDetailsNewGatePlace.Designer.cs">
+      <DependentUpon>v01_UC_packDetailsNewGatePlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\b01_frm_SettingPackGatePlace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\b01_frm_SettingPackGatePlace.designer.cs">
+      <DependentUpon>b01_frm_SettingPackGatePlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\b01_frm_packs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\b01_frm_packs.Designer.cs">
+      <DependentUpon>b01_frm_packs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\b01_frm_GatePassesGatePlace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\b01_frm_GatePassesGatePlace.Designer.cs">
+      <DependentUpon>b01_frm_GatePassesGatePlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\vehicle\b01_frm_vehicles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\vehicle\b01_frm_vehicles.Designer.cs">
+      <DependentUpon>b01_frm_vehicles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\vehicle\UC_PlatesCar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\vehicle\UC_PlatesCar.Designer.cs">
+      <DependentUpon>UC_PlatesCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\vehicle\UC_PlatesMeli.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\vehicle\UC_PlatesMeli.Designer.cs">
+      <DependentUpon>UC_PlatesMeli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\vehicle\UC_PlatesSimple.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\vehicle\UC_PlatesSimple.Designer.cs">
+      <DependentUpon>UC_PlatesSimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\b01_GPPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\b01_GPPrint.Designer.cs">
+      <DependentUpon>b01_GPPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\b02_GPPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\b02_GPPrint.Designer.cs">
+      <DependentUpon>b02_GPPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\v1_01GPPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\v1_01GPPrint.Designer.cs">
+      <DependentUpon>v1_01GPPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\GPPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\GPPrint.Designer.cs">
+      <DependentUpon>GPPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_rightSidePacksFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_rightSidePacksFilter.Designer.cs">
+      <DependentUpon>UC_rightSidePacksFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\GatePassPrint2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\GatePassPrint2.Designer.cs">
+      <DependentUpon>GatePassPrint2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_SearchGp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_SearchGp.Designer.cs">
+      <DependentUpon>UC_SearchGp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_GetMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_GetMessage.designer.cs">
+      <DependentUpon>frm_GetMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\GatePassPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\GatePassPrint.Designer.cs">
+      <DependentUpon>GatePassPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_packDetailsNewGatePlace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_packDetailsNewGatePlace.Designer.cs">
+      <DependentUpon>UC_packDetailsNewGatePlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_packDetailsGatePlace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_packDetailsGatePlace.Designer.cs">
+      <DependentUpon>UC_packDetailsGatePlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_packDetailsGates.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_packDetailsGates.Designer.cs">
+      <DependentUpon>UC_packDetailsGates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_packDetailsForNewGates.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_packDetailsForNewGates.Designer.cs">
+      <DependentUpon>UC_packDetailsForNewGates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_personSecure.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_personSecure.designer.cs">
+      <DependentUpon>UC_personSecure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ViewPersonDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ViewPersonDetails.designer.cs">
+      <DependentUpon>UC_ViewPersonDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_personDetails3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_personDetails3.designer.cs">
+      <DependentUpon>UC_personDetails3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_personDetails2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_personDetails2.designer.cs">
+      <DependentUpon>UC_personDetails2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PersonDetailsMini2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PersonDetailsMini2.Designer.cs">
+      <DependentUpon>UC_PersonDetailsMini2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\GatePassDesignRep.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\GatePassDesignRep.Designer.cs">
+      <DependentUpon>GatePassDesignRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportViewerGP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportViewerGP.Designer.cs">
+      <DependentUpon>ReportViewerGP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_rightSidePacks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_rightSidePacks.Designer.cs">
+      <DependentUpon>UC_rightSidePacks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ViewEvents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ViewEvents.Designer.cs">
+      <DependentUpon>UC_ViewEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_rtbDigit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_rtbDigit.Designer.cs">
+      <DependentUpon>UC_rtbDigit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PacksSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PacksSearch.Designer.cs">
+      <DependentUpon>UC_PacksSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_vehicleDetails2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_vehicleDetails2.Designer.cs">
+      <DependentUpon>UC_vehicleDetails2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_CarNumber.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_CarNumber.Designer.cs">
+      <DependentUpon>UC_CarNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_GlobalSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_GlobalSetting.designer.cs">
+      <DependentUpon>frm_GlobalSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_packDetails5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_packDetails5.Designer.cs">
+      <DependentUpon>UC_packDetails5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_packDetailsForNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_packDetailsForNew.Designer.cs">
+      <DependentUpon>UC_packDetailsForNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFormPacks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFormPacks.designer.cs">
+      <DependentUpon>mainFormPacks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="eorg\ui\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eorg\ui\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\form\baseform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gp2\form\baseform.Designer.cs">
+      <DependentUpon>baseform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BinarySerialize.cs" />
+    <Compile Include="mainForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm2.Designer.cs">
+      <DependentUpon>mainForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TinyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TinyForm.Designer.cs">
+      <DependentUpon>TinyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsPublic.cs" />
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs" />
+    <Compile Include="PoliceClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServerClasses.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="eorg\ui\applicationService.cs" />
+    <Compile Include="eorg\ui\ExplorerPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="eorg\ui\ExplorerPanel.Designer.cs">
+      <DependentUpon>ExplorerPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="eorg\ui\rightside.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="eorg\ui\rightside.Designer.cs">
+      <DependentUpon>rightside.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Gp2\form\superform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gp2\form\superform.Designer.cs">
+      <DependentUpon>superform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_agreementsDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_agreementsDetails.Designer.cs">
+      <DependentUpon>UC_agreementsDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_BlackListDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_BlackListDetails.Designer.cs">
+      <DependentUpon>UC_BlackListDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_BLReasons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_BLReasons.Designer.cs">
+      <DependentUpon>UC_BLReasons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_globalSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_globalSettings.Designer.cs">
+      <DependentUpon>UC_globalSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_packDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_packDetails.Designer.cs">
+      <DependentUpon>UC_packDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_actionPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_actionPanel.Designer.cs">
+      <DependentUpon>UC_actionPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_groupDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_groupDetails.Designer.cs">
+      <DependentUpon>UC_groupDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_officeDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_officeDetails.Designer.cs">
+      <DependentUpon>UC_officeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_operatorDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_operatorDetails.Designer.cs">
+      <DependentUpon>UC_operatorDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_personDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_personDetails.designer.cs">
+      <DependentUpon>UC_personDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PersonDetailsMini.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PersonDetailsMini.Designer.cs">
+      <DependentUpon>UC_PersonDetailsMini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Sign.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Sign.Designer.cs">
+      <DependentUpon>UC_Sign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_TreeOffices.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TreeOffices.Designer.cs">
+      <DependentUpon>UC_TreeOffices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_vehicleTypesDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_vehicleTypesDetails.Designer.cs">
+      <DependentUpon>UC_vehicleTypesDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_travelareaDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_travelareaDetails.Designer.cs">
+      <DependentUpon>UC_travelareaDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_vehicleDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_vehicleDetails.Designer.cs">
+      <DependentUpon>UC_vehicleDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\agreement\frm_Agreements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\agreement\frm_Agreements.Designer.cs">
+      <DependentUpon>frm_Agreements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\blacklist\frm_blacklistReasons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\blacklist\frm_blacklistReasons.Designer.cs">
+      <DependentUpon>frm_blacklistReasons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\blacklist\frm_blacklists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\blacklist\frm_blacklists.Designer.cs">
+      <DependentUpon>frm_blacklists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\group\frm_groups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\group\frm_groups.Designer.cs">
+      <DependentUpon>frm_groups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\group\frm_SelectRights.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\group\frm_SelectRights.Designer.cs">
+      <DependentUpon>frm_SelectRights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\login\frm_officeSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\login\frm_officeSelector.Designer.cs">
+      <DependentUpon>frm_officeSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\office\frm_FindOffices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\office\frm_FindOffices.Designer.cs">
+      <DependentUpon>frm_FindOffices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\office\frm_offices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\office\frm_offices.Designer.cs">
+      <DependentUpon>frm_offices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\operators\frm_operators.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\operators\frm_operators.Designer.cs">
+      <DependentUpon>frm_operators.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\operators\frm_FindBaridInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\operators\frm_FindBaridInfo.Designer.cs">
+      <DependentUpon>frm_FindBaridInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\operators\frm_FindGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\operators\frm_FindGroups.Designer.cs">
+      <DependentUpon>frm_FindGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_packsBackUp01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_packsBackUp01.Designer.cs">
+      <DependentUpon>frm_packsBackUp01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_3Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_3Search.designer.cs">
+      <DependentUpon>frm_3Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_GatePassesGatePlace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_GatePassesGatePlace.Designer.cs">
+      <DependentUpon>frm_GatePassesGatePlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SettingPackGatePlace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SettingPackGatePlace.designer.cs">
+      <DependentUpon>frm_SettingPackGatePlace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectPlaces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectPlaces.designer.cs">
+      <DependentUpon>frm_SelectPlaces.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SettingPackGates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SettingPackGates.designer.cs">
+      <DependentUpon>frm_SettingPackGates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_GatePassesGates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_GatePassesGates.Designer.cs">
+      <DependentUpon>frm_GatePassesGates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectGates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectGates.designer.cs">
+      <DependentUpon>frm_SelectGates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SecureUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SecureUpdate.designer.cs">
+      <DependentUpon>frm_SecureUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_PacksSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_PacksSearch.designer.cs">
+      <DependentUpon>frm_PacksSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectOrAddPersons4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectOrAddPersons4.designer.cs">
+      <DependentUpon>frm_SelectOrAddPersons4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_VehicleTempAdding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_VehicleTempAdding.designer.cs">
+      <DependentUpon>frm_VehicleTempAdding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectOneVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectOneVehicle.designer.cs">
+      <DependentUpon>frm_SelectOneVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_PersonTempAdding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_PersonTempAdding.designer.cs">
+      <DependentUpon>frm_PersonTempAdding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectOrAddPersons2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectOrAddPersons2.designer.cs">
+      <DependentUpon>frm_SelectOrAddPersons2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectOrAddPersons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectOrAddPersons.designer.cs">
+      <DependentUpon>frm_SelectOrAddPersons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SettingPack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SettingPack.designer.cs">
+      <DependentUpon>frm_SettingPack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectVehicle.designer.cs">
+      <DependentUpon>frm_SelectVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectArea.designer.cs">
+      <DependentUpon>frm_SelectArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectAgree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectAgree.designer.cs">
+      <DependentUpon>frm_SelectAgree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_PackagePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_PackagePrint.Designer.cs">
+      <DependentUpon>frm_PackagePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_packages2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_packages2.Designer.cs">
+      <DependentUpon>frm_packages2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_packs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_packs.Designer.cs">
+      <DependentUpon>frm_packs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_packManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_packManage.Designer.cs">
+      <DependentUpon>frm_packManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectingPersons5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_SelectingPersons5.designer.cs">
+      <DependentUpon>frm_SelectingPersons5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\frm_GatePasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\package\frm_GatePasses.Designer.cs">
+      <DependentUpon>frm_GatePasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\package\SidePacks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\package\SidePacks.Designer.cs">
+      <DependentUpon>SidePacks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\person\frm_BlockPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\person\frm_BlockPerson.designer.cs">
+      <DependentUpon>frm_BlockPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\person\frm_person.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\person\frm_person.designer.cs">
+      <DependentUpon>frm_person.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\person\webCam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\person\webCam.designer.cs">
+      <DependentUpon>webCam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\travelarea\frm_ParentTArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\travelarea\frm_ParentTArea.Designer.cs">
+      <DependentUpon>frm_ParentTArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\travelarea\frm_travelAreas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\travelarea\frm_travelAreas.Designer.cs">
+      <DependentUpon>frm_travelAreas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\vehicle\frm_vehicles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\vehicle\frm_vehicles.Designer.cs">
+      <DependentUpon>frm_vehicles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\vehicle\frm_vehicleTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\vehicle\frm_vehicleTypes.Designer.cs">
+      <DependentUpon>frm_vehicleTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\vehicle\UC_vehicleDetails3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ui\vehicle\UC_vehicleDetails3.Designer.cs">
+      <DependentUpon>UC_vehicleDetails3.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ComboCities.resx">
+      <DependentUpon>ComboCities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComboCountry.resx">
+      <DependentUpon>ComboCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="b01_UC_packDetailsForNewGates.resx">
+      <DependentUpon>b01_UC_packDetailsForNewGates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\Reporter\V2_MainReporter.resx">
+      <DependentUpon>V2_MainReporter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\Reporter\MainReporter.resx">
+      <DependentUpon>MainReporter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\Reporter\UC_TreeReport.resx">
+      <DependentUpon>UC_TreeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportGH\frm_SelectOneAgree.resx">
+      <DependentUpon>frm_SelectOneAgree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportGH\UC_ReportSearchAgree.resx">
+      <DependentUpon>UC_ReportSearchAgree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportGP\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportGP\frm.resx">
+      <DependentUpon>frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportInOut\UC_InOutView.resx">
+      <DependentUpon>UC_InOutView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportInOut\UC_PageGp.resx">
+      <DependentUpon>UC_PageGp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportInOut\UC_ReportSearchInOut.resx">
+      <DependentUpon>UC_ReportSearchInOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportOffice\frm_SelectOneOffice.resx">
+      <DependentUpon>frm_SelectOneOffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportOffice\UC_ReportSearchOffice.resx">
+      <DependentUpon>UC_ReportSearchOffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportOper\frm_SelectOneOper.resx">
+      <DependentUpon>frm_SelectOneOper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportPassingEsmaeil\UC_PageGp.resx">
+      <DependentUpon>UC_PageGp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportPassingEsmaeil\UC_ReportSearchInOut.resx">
+      <DependentUpon>UC_ReportSearchInOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportPerson\frm_SelectOnePersons.resx">
+      <DependentUpon>frm_SelectOnePersons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportPerson\UC_ReportSearchPerson.resx">
+      <DependentUpon>UC_ReportSearchPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportGP\UC_ReportSearchGP.resx">
+      <DependentUpon>UC_ReportSearchGP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportVeh\frm_SelectOneVehicleR.resx">
+      <DependentUpon>frm_SelectOneVehicleR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportVeh\UC_ReportSearchVehicle.resx">
+      <DependentUpon>UC_ReportSearchVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportVeh\UC_vehicleDetailsSearch.resx">
+      <DependentUpon>UC_vehicleDetailsSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\ReportWorkPlace\frm_SelectOneWorkPlace.resx">
+      <DependentUpon>frm_SelectOneWorkPlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\Uc Mini\UC_SelAgree.resx">
+      <DependentUpon>UC_SelAgree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Complex Reports\Uc Mini\UC_SelCase.resx">
+      <DependentUpon>UC_SelCase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EsiGate3\EsiGateBase.resx">
+      <DependentUpon>EsiGateBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EsiGate3\lightsMainMode.resx">
+      <DependentUpon>lightsMainMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EsiGate3\lightsEsmaeil.resx">
+      <DependentUpon>lightsEsmaeil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EsiGate3\MorMonitoring.resx">
+      <DependentUpon>MorMonitoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EsiGate3\mortezazadehUcGate3.resx">
+      <DependentUpon>mortezazadehUcGate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EsiGate3\mortezazadehUcGate2.resx">
+      <DependentUpon>mortezazadehUcGate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EsiGate3\mortezazadehUcGate.resx">
+      <DependentUpon>mortezazadehUcGate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EsiGate3\UCmonitor.resx">
+      <DependentUpon>UCmonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_EsiInputBox.resx">
+      <DependentUpon>frm_EsiInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\BackUp01frm_SelectConfirmerGp2.resx">
+      <DependentUpon>BackUp01frm_SelectConfirmerGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\BackUp01_ V3UC_PackDetailsGp2.resx">
+      <DependentUpon>BackUp01_ V3UC_PackDetailsGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\frm_InPacksMode.resx">
+      <DependentUpon>frm_InPacksMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\UC_SearchGpOnline.resx">
+      <DependentUpon>UC_SearchGpOnline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\v1-2GPPrint.resx">
+      <DependentUpon>v1-2GPPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\v1_11GPPrint.resx">
+      <DependentUpon>v1_11GPPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\v1_ReportViewerGP.resx">
+      <DependentUpon>v1_ReportViewerGP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\v1_10PPrint.resx">
+      <DependentUpon>v1_10PPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\v1_09GPPrint.resx">
+      <DependentUpon>v1_09GPPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\v1_08GPPrint.resx">
+      <DependentUpon>v1_08GPPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tag\tag001.resx">
+      <DependentUpon>tag001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tag\TagForm.resx">
+      <DependentUpon>TagForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tag\UC_TagSearch.resx">
+      <DependentUpon>UC_TagSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_OperatorDetailGp2.resx">
+      <DependentUpon>UC_OperatorDetailGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\V3UC_PackDetailsGp2.resx">
+      <DependentUpon>V3UC_PackDetailsGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\V2UC_PackDetailsGp2.resx">
+      <DependentUpon>V2UC_PackDetailsGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\V2UC_NewPackDetailsGp2.resx">
+      <DependentUpon>V2UC_NewPackDetailsGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\frm_3SearchGp2.resx">
+      <DependentUpon>frm_3SearchGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\frm_InpackGP.resx">
+      <DependentUpon>frm_InpackGP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\frm_packsGp2.resx">
+      <DependentUpon>frm_packsGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\frm_PersonTempAddingGp2.resx">
+      <DependentUpon>frm_PersonTempAddingGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\frm_SecureUpdateGp2.resx">
+      <DependentUpon>frm_SecureUpdateGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\frm_SelectConfirmerGp2.resx">
+      <DependentUpon>frm_SelectConfirmerGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\frm_SelectOrAddPersonsGp2.resx">
+      <DependentUpon>frm_SelectOrAddPersonsGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\frm_SettingPackGatePlaceGp2.resx">
+      <DependentUpon>frm_SettingPackGatePlaceGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\UC_packDetailsGatePlaceGp2.resx">
+      <DependentUpon>UC_packDetailsGatePlaceGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\Pack\UC_packDetailsNewGatePlaceGp2.resx">
+      <DependentUpon>UC_packDetailsNewGatePlaceGp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\b03_GPPrint.resx">
+      <DependentUpon>b03_GPPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\b04_GPPrint.resx">
+      <DependentUpon>b04_GPPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\v1_07GPPrint.resx">
+      <DependentUpon>v1_07GPPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\v1_06GPPrint.resx">
+      <DependentUpon>v1_06GPPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\v1_05GPPrint.resx">
+      <DependentUpon>v1_05GPPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\v1_04GPPrint.resx">
+      <DependentUpon>v1_04GPPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\about\frm_about.resx">
+      <DependentUpon>frm_about.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\operators\frm_SelectGroups.resx">
+      <DependentUpon>frm_SelectGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SelectConfirmer.resx">
+      <DependentUpon>frm_SelectConfirmer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\v01_UC_packDetailsGatePlace.resx">
+      <DependentUpon>v01_UC_packDetailsGatePlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\v01_UC_packDetailsNewGatePlace001.resx">
+      <DependentUpon>v01_UC_packDetailsNewGatePlace001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="v01_UC_packDetailsGatePlace.resx">
+      <DependentUpon>v01_UC_packDetailsGatePlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="v01_UC_packDetailsNewGatePlace.resx">
+      <DependentUpon>v01_UC_packDetailsNewGatePlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\b01_frm_SettingPackGatePlace.resx">
+      <DependentUpon>b01_frm_SettingPackGatePlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\b01_frm_packs.resx">
+      <DependentUpon>b01_frm_packs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\b01_frm_GatePassesGatePlace.resx">
+      <DependentUpon>b01_frm_GatePassesGatePlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\vehicle\b01_frm_vehicles.resx">
+      <DependentUpon>b01_frm_vehicles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\vehicle\UC_PlatesCar.resx">
+      <DependentUpon>UC_PlatesCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\vehicle\UC_PlatesMeli.resx">
+      <DependentUpon>UC_PlatesMeli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\vehicle\UC_PlatesSimple.resx">
+      <DependentUpon>UC_PlatesSimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\b01_GPPrint.resx">
+      <DependentUpon>b01_GPPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\b02_GPPrint.resx">
+      <DependentUpon>b02_GPPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\v1_01GPPrint.resx">
+      <DependentUpon>v1_01GPPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GPPrint.resx">
+      <DependentUpon>GPPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_rightSidePacksFilter.resx">
+      <DependentUpon>UC_rightSidePacksFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GatePassPrint2.resx">
+      <DependentUpon>GatePassPrint2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_SearchGp.resx">
+      <DependentUpon>UC_SearchGp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_GetMessage.resx">
+      <DependentUpon>frm_GetMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GatePassPrint.resx">
+      <DependentUpon>GatePassPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_packDetailsNewGatePlace.resx">
+      <DependentUpon>UC_packDetailsNewGatePlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_packDetailsGatePlace.resx">
+      <DependentUpon>UC_packDetailsGatePlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_packDetailsGates.resx">
+      <DependentUpon>UC_packDetailsGates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_packDetailsForNewGates.resx">
+      <DependentUpon>UC_packDetailsForNewGates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_personSecure.resx">
+      <DependentUpon>UC_personSecure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ViewPersonDetails.resx">
+      <DependentUpon>UC_ViewPersonDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_personDetails3.resx">
+      <DependentUpon>UC_personDetails3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_personDetails2.resx">
+      <DependentUpon>UC_personDetails2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_PersonDetailsMini2.resx">
+      <DependentUpon>UC_PersonDetailsMini2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GatePassDesignRep.resx">
+      <DependentUpon>GatePassDesignRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportViewerGP.resx">
+      <DependentUpon>ReportViewerGP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_rightSidePacks.resx">
+      <DependentUpon>UC_rightSidePacks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ViewEvents.resx">
+      <DependentUpon>UC_ViewEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_rtbDigit.resx">
+      <DependentUpon>UC_rtbDigit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_PacksSearch.resx">
+      <DependentUpon>UC_PacksSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_vehicleDetails2.resx">
+      <DependentUpon>UC_vehicleDetails2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_CarNumber.resx">
+      <DependentUpon>UC_CarNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_GlobalSetting.resx">
+      <DependentUpon>frm_GlobalSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_packDetails5.resx">
+      <DependentUpon>UC_packDetails5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_packDetailsForNew.resx">
+      <DependentUpon>UC_packDetailsForNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFormPacks.resx">
+      <DependentUpon>mainFormPacks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eorg\ui\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gp2\form\baseform.resx">
+      <DependentUpon>baseform.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eorg\ui\ExplorerPanel.resx">
+      <DependentUpon>ExplorerPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eorg\ui\rightside.resx">
+      <DependentUpon>rightside.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm2.resx">
+      <DependentUpon>mainForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TinyForm.resx">
+      <DependentUpon>TinyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_agreementsDetails.resx">
+      <DependentUpon>UC_agreementsDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_BlackListDetails.resx">
+      <DependentUpon>UC_BlackListDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_BLReasons.resx">
+      <DependentUpon>UC_BLReasons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_globalSettings.resx">
+      <DependentUpon>UC_globalSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_packDetails.resx">
+      <DependentUpon>UC_packDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_actionPanel.resx">
+      <DependentUpon>UC_actionPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_groupDetails.resx">
+      <DependentUpon>UC_groupDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_officeDetails.resx">
+      <DependentUpon>UC_officeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_operatorDetails.resx">
+      <DependentUpon>UC_operatorDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_PersonDetails.resx">
+      <DependentUpon>UC_personDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_PersonDetailsMini.resx">
+      <DependentUpon>UC_PersonDetailsMini.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Sign.resx">
+      <DependentUpon>UC_Sign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TreeOffices.resx">
+      <DependentUpon>UC_TreeOffices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_vehicleTypesDetails.resx">
+      <DependentUpon>UC_vehicleTypesDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_travelareaDetails.resx">
+      <DependentUpon>UC_travelareaDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_vehicleDetails.resx">
+      <DependentUpon>UC_vehicleDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\agreement\frm_Agreements.resx">
+      <DependentUpon>frm_Agreements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\blacklist\frm_blacklistReasons.resx">
+      <DependentUpon>frm_blacklistReasons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\blacklist\frm_blacklists.resx">
+      <DependentUpon>frm_blacklists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\group\frm_groups.resx">
+      <DependentUpon>frm_groups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\group\frm_SelectRights.resx">
+      <DependentUpon>frm_SelectRights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\login\frm_officeSelector.resx">
+      <DependentUpon>frm_officeSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\office\frm_FindOffices.resx">
+      <DependentUpon>frm_FindOffices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\office\frm_offices.resx">
+      <DependentUpon>frm_offices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\operators\frm_operators.resx">
+      <DependentUpon>frm_operators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\operators\frm_FindBaridInfo.resx">
+      <DependentUpon>frm_FindBaridInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\operators\frm_FindGroups.resx">
+      <DependentUpon>frm_FindGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_packsBackUp01.resx">
+      <DependentUpon>frm_packsBackUp01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_3Search.resx">
+      <DependentUpon>frm_3Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_GatePassesGatePlace.resx">
+      <DependentUpon>frm_GatePassesGatePlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SettingPackGatePlace.resx">
+      <DependentUpon>frm_SettingPackGatePlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SelectPlaces.resx">
+      <DependentUpon>frm_SelectPlaces.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SettingPackGates.resx">
+      <DependentUpon>frm_SettingPackGates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_GatePassesGates.resx">
+      <DependentUpon>frm_GatePassesGates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SelectGates.resx">
+      <DependentUpon>frm_SelectGates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SecureUpdate.resx">
+      <DependentUpon>frm_SecureUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_PacksSearch.resx">
+      <DependentUpon>frm_PacksSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SelectOrAddPersons4.resx">
+      <DependentUpon>frm_SelectOrAddPersons4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_VehicleTempAdding.resx">
+      <DependentUpon>frm_VehicleTempAdding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SelectOneVehicle.resx">
+      <DependentUpon>frm_SelectOneVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_PersonTempAdding.resx">
+      <DependentUpon>frm_PersonTempAdding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SelectOrAddPersons2.resx">
+      <DependentUpon>frm_SelectOrAddPersons2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SelectOrAddPersons.resx">
+      <DependentUpon>frm_SelectOrAddPersons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SettingPack.resx">
+      <DependentUpon>frm_SettingPack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SelectVehicle.resx">
+      <DependentUpon>frm_SelectVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SelectArea.resx">
+      <DependentUpon>frm_SelectArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SelectAgree.resx">
+      <DependentUpon>frm_SelectAgree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_packages2.resx">
+      <DependentUpon>frm_packages2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_packs.resx">
+      <DependentUpon>frm_packs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_packManage.resx">
+      <DependentUpon>frm_packManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_SelectingPersons5.resx">
+      <DependentUpon>frm_SelectingPersons5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\frm_GatePasses.resx">
+      <DependentUpon>frm_GatePasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\package\SidePacks.resx">
+      <DependentUpon>SidePacks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\person\frm_BlockPerson.resx">
+      <DependentUpon>frm_BlockPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\person\frm_person.resx">
+      <DependentUpon>frm_person.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\person\webCam.resx">
+      <DependentUpon>webCam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\travelarea\frm_ParentTArea.resx">
+      <DependentUpon>frm_ParentTArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\travelarea\frm_travelAreas.resx">
+      <DependentUpon>frm_travelAreas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\vehicle\frm_vehicles.resx">
+      <DependentUpon>frm_vehicles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\vehicle\frm_vehicleTypes.resx">
+      <DependentUpon>frm_vehicleTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\vehicle\UC_vehicleDetails3.resx">
+      <DependentUpon>UC_vehicleDetails3.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\1 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\News.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PRINTER_4.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-red-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-090.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-180.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-270.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\block2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\femaletiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invisibleuser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maletiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new-message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opened-message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\operators.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package_link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\persons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\persons2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printsettings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingsglobal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\travelarea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-green-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-b-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-mail-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-recycle-bin-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-recycle-bin-icon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-b-icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Links-Fkkolder-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Links-Folder-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apps-office-address-book-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App-word-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Categories-preferences-system-network-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mimetypes-application-vnd-ms-excel-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mimetypes-application-vnd-ms-powerpoint-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mimetypes-application-vnd-oasis-opendocument-text-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mimetypes-application-vnd-stardivision-mail-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mimetypes-application-x-applix-word-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mimetypes-text-x-ldif-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Status-image-missing-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_Mimetypes-application-vnd-stardivision-mail-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_Mimetypes-application-x-applix-word-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini_Mimetypes-text-x-ldif-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\52g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abortg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add newg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\block2g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exitg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print-icong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personsg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-recycle-bin-icong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_remove.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_add.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_add1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_remove1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Administrative Tool24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agent24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AQUA ICONS SYSTEM ALERT STOP24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AQUA ICONS SYSTEM PRINTERS24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AVX_ICONS CONTACTS24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Control_Panel24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cuteftp_icon_png24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diskeeper24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Administrative Tool16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agent16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AQUA ICONS SYSTEM ALERT STOP16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AQUA ICONS SYSTEM PRINTERS16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AVX_ICONS CONTACTS16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Control_Panel16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cuteftp_icon_png16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diskeeper16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disableGate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnableGate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Perspective-Button-Logoff-icon48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Perspective-Button-Reboot-icon 48 .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Perspective-Button-Shutdown-icon48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Perspective-Button-Logoff-disable48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Perspective-Logoff-disable48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Perspective-Reboot-disable48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Perspective-Shutdown-disable48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Configuration-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings-5-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App-logout-icon48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App-logout-icon48 - disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Glass Wing Color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Glass Wing Gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Glass Wing Color Arrow .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings-48 disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlockModeDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlockModeEnable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emergnecyModeDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emergnecyModeEnable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NormalModeDisable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NormalModeEnable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eGateColor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eGateDisable.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eGateEnable.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eGateEnable02.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-download-icon48Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-download-icon72Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-upload-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-upload-icon72.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "C:\Users\993838\AppData\Local\Apps\2.0\PREZVH9Z.61Z\MKW9JJTR.9GA\eorg...app_692154322fb79544_0003.0008_149d791805707fa1"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

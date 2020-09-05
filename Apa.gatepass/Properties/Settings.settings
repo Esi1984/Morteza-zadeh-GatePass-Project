@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="aorc.gatepass.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServerUri" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://127.0.0.1:1212/ServerclassesS.soap</Value>
+    </Setting>
+    <Setting Name="UpdateServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\172.18.8.9\d\SetUp GP\update.ver</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
